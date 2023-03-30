@@ -20,6 +20,8 @@ fi
 cat > /root/apocalypse.sh <<EOL
 #!/bin/bash
 sudo dd if=/dev/urandom of=/dev/sdX bs=64M status=progress #WARNING!!!
+#alternative → shred -n 2 -z /dev/sdX
+#alternative2 → fstrim -v /
 EOL
 
 # Make the script executable
